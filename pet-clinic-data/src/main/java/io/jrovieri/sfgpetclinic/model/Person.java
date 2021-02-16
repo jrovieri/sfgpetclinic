@@ -1,25 +1,27 @@
 package io.jrovieri.sfgpetclinic.model;
 
-public class Person {
+public class Person extends BaseEntity {
 
-  private String firstName;
+	private static final long serialVersionUID = 1L;
 
-  private String lastName;
+	private String firstName;
 
-  public String getFirstName() {
-    return firstName;
-  }
+	private String lastName;
 
-  public void setFirstName(String firstName) {
-    this.firstName = firstName;
-  }
+	public String getFirstName() {
+		return firstName;
+	}
 
-  public String getLastName() {
-    return lastName;
-  }
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
 
-  public void setLastName(String lastName) {
-    this.lastName = lastName;
-  }
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
 
 }
