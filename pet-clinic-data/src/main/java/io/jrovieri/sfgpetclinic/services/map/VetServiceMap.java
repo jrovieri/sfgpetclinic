@@ -3,9 +3,9 @@ package io.jrovieri.sfgpetclinic.services.map;
 import java.util.Set;
 
 import io.jrovieri.sfgpetclinic.model.Vet;
-import io.jrovieri.sfgpetclinic.services.CrudService;
+import io.jrovieri.sfgpetclinic.services.VetService;
 
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements CrudService<Vet, Long> {
+public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 
 	@Override
 	public Set<Vet> findAll() {
