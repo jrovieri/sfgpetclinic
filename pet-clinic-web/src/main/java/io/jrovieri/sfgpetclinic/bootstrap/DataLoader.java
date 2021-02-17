@@ -7,8 +7,6 @@ import io.jrovieri.sfgpetclinic.model.Owner;
 import io.jrovieri.sfgpetclinic.model.Vet;
 import io.jrovieri.sfgpetclinic.services.OwnerService;
 import io.jrovieri.sfgpetclinic.services.VetService;
-import io.jrovieri.sfgpetclinic.services.map.OwnerServiceMap;
-import io.jrovieri.sfgpetclinic.services.map.VetServiceMap;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -16,11 +14,11 @@ public class DataLoader implements CommandLineRunner {
 	private final OwnerService ownerService;
 	private final VetService vetService;
 	
-	public DataLoader() {
-		ownerService = new OwnerServiceMap();
-		vetService = new VetServiceMap();
+	public DataLoader(OwnerService ownerService, VetService vetService) {
+		this.ownerService = ownerService;
+		this.vetService = vetService;
 	}
-	
+
 	@Override
 	public void run(String... args) throws Exception {
 		
