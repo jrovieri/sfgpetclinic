@@ -7,13 +7,13 @@ public class Vet extends Person {
 
 	private static final long serialVersionUID = 1L;
 
-	private Set<Speciality> specialties = new HashSet<Speciality>();
+	private Set<Specialty> specialties = new HashSet<Specialty>();
 
-	public Set<Speciality> getSpecialties() {
+	public Set<Specialty> getSpecialties() {
 		return specialties;
 	}
 
-	public void setSpecialties(Set<Speciality> specialties) {
+	public void setSpecialties(Set<Specialty> specialties) {
 		this.specialties = specialties;
 	}
 }
