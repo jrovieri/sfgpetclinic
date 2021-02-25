@@ -15,7 +15,7 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
 
 	private final PetTypeService petTypeService;
 	private final PetService petService;
-	
+
 	public OwnerServiceMap(PetTypeService petTypeService, PetService petService) {
 		super();
 		this.petTypeService = petTypeService;
@@ -44,7 +44,7 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
 					} else {
 						throw new RuntimeException("Pet Type is required");
 					}
-					
+
 					if (pet.getId() == null) {
 						Pet savedPet = petService.save(pet);
 						pet.setId(savedPet.getId());
@@ -69,7 +69,6 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
 
 	@Override
 	public Owner findByLastname(String lastName) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 }
