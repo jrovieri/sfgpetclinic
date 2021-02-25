@@ -10,12 +10,12 @@ import io.jrovieri.sfgpetclinic.services.VetService;
 public class VetController {
 
 	private final VetService vetService;
-	
+
 	public VetController(VetService vetService) {
 		this.vetService = vetService;
 	}
 
-	@RequestMapping({"/vets", "/vets/index", "/vets/index.html"})
+	@RequestMapping({ "/vets", "/vets/index", "/vets/index.html", "/vets.html" })
 	public String listVets(Model model) {
 		model.addAttribute("vets", vetService.findAll());
 		return "vets/index";
