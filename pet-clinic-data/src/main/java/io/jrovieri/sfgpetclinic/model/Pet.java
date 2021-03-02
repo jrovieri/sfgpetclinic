@@ -1,47 +1,61 @@
 package io.jrovieri.sfgpetclinic.model;
 
 import java.time.LocalDate;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "pets")
 public class Pet extends BaseEntity {
 
-	private static final long serialVersionUID = 1L;
-	
-	private String name;
-	private PetType petType;
-	private Owner owner;
-	private LocalDate birthDate;
+  private static final long serialVersionUID = 1L;
 
-	public PetType getPetType() {
-		return petType;
-	}
+  @Column(name = "name")
+  private String name;
 
-	public String getName() {
-		return name;
-	}
+  @ManyToOne
+  @JoinColumn(name = "type_id")
+  private PetType petType;
 
-	public void setName(String name) {
-		this.name = name;
-	}
+  @ManyToOne
+  @JoinColumn(name = "owner_id")
+  private Owner owner;
 
+  @Column(name = "birth_date")
+  private LocalDate birthDate;
 
-	public void setPetType(PetType petType) {
-		this.petType = petType;
-	}
+  public PetType getPetType() {
+    return petType;
+  }
 
-	public Owner getOwner() {
-		return owner;
-	}
+  public String getName() {
+    return name;
+  }
 
-	public void setOwner(Owner owner) {
-		this.owner = owner;
-	}
+  public void setName(String name) {
+    this.name = name;
+  }
 
-	public LocalDate getBirthDate() {
-		return birthDate;
-	}
+  public void setPetType(PetType petType) {
+    this.petType = petType;
+  }
 
-	public void setBirthDate(LocalDate birthDate) {
-		this.birthDate = birthDate;
-	}
+  public Owner getOwner() {
+    return owner;
+  }
 
+  public void setOwner(Owner owner) {
+    this.owner = owner;
+  }
+
+  public LocalDate getBirthDate() {
+    return birthDate;
+  }
+
+  public void setBirthDate(LocalDate birthDate) {
+    this.birthDate = birthDate;
+  }
 }
