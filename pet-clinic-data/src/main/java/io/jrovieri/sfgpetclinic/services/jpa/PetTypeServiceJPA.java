@@ -5,7 +5,11 @@ import io.jrovieri.sfgpetclinic.repositories.PetTypeRepository;
 import io.jrovieri.sfgpetclinic.services.PetTypeService;
 import java.util.HashSet;
 import java.util.Set;
+import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Service;
 
+@Service
+@Profile("jpa")
 public class PetTypeServiceJPA implements PetTypeService {
 
   private final PetTypeRepository petTypeRepository;
