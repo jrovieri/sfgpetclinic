@@ -3,9 +3,11 @@ package io.jrovieri.sfgpetclinic.services.map;
 import io.jrovieri.sfgpetclinic.model.Visit;
 import io.jrovieri.sfgpetclinic.services.VisitService;
 import java.util.Set;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 @Service
+@Profile({"default", "map"})
 public class VisitMapService extends AbstractMapService<Visit, Long> implements VisitService {
 
   @Override
