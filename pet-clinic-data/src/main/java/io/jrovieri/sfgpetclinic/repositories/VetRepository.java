@@ -1,0 +1,6 @@
+package io.jrovieri.sfgpetclinic.repositories;
+
+import io.jrovieri.sfgpetclinic.model.Vet;
+import org.springframework.data.repository.CrudRepository;
+
+public interface VetRepository extends CrudRepository<Vet, Long> {}
