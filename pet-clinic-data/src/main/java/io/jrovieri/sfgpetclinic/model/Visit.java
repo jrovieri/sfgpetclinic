@@ -1,38 +1,49 @@
 package io.jrovieri.sfgpetclinic.model;
 
 import java.time.LocalDate;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "visits")
 public class Visit extends BaseEntity {
 
-	private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-	private LocalDate date;
-	
-	private String description;
-	
-	private Pet pet;
+  @Column(name = "date")
+  private LocalDate date;
 
-	public LocalDate getDate() {
-		return date;
-	}
+  @Column(name = "description")
+  private String description;
 
-	public void setDate(LocalDate date) {
-		this.date = date;
-	}
+  @ManyToOne
+  @JoinColumn(name = "pet_id")
+  private Pet pet;
 
-	public String getDescription() {
-		return description;
-	}
+  public LocalDate getDate() {
+    return date;
+  }
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
+  public void setDate(LocalDate date) {
+    this.date = date;
+  }
 
-	public Pet getPet() {
-		return pet;
-	}
+  public String getDescription() {
+    return description;
+  }
 
-	public void setPet(Pet pet) {
-		this.pet = pet;
-	}
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+  public Pet getPet() {
+    return pet;
+  }
+
+  public void setPet(Pet pet) {
+    this.pet = pet;
+  }
 }
